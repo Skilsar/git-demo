@@ -59,10 +59,12 @@ public class ProductPage extends AbstractPage
     }
 
     public ProductPage addToCart() throws InterruptedException {
+        logger.info("Successful sizing");
         driver.findElement(By.xpath("//*[@id=\"msProduct\"]/div[2]/form/div/div[5]/button")).click();
         Thread.sleep(500);
         driver.findElement(By.xpath("//*[@class=\"button-modal-cart\"]")).click();
         Thread.sleep(3000);
+        logger.info("Element add success");
         return this;
     }
 
@@ -73,6 +75,7 @@ public class ProductPage extends AbstractPage
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div[1]/div[1]/div[4]/div/div[3]")).click();
         Thread.sleep(700);
+        logger.info("Element delete success");
         /*driver.findElement(By.xpath("//*[@id=\"msMiniCart\"]/div[2]/div[1]/div/form/button")).click();*/
         return this;
     }
